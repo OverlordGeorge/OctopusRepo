@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int* randomizeArr(int n){
+            int* arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = rand() % 50;
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+int calculateTheAverage(int n; int*arr){
+    int sum = 0;
+    int average = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum = sum + arr[i];
+        average = sum / n;
+    }
+    return average;
+}
+
+int main()
+{
+
+}
