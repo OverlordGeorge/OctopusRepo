@@ -14,6 +14,7 @@ void writeFile(string name, int balance){
 	ofstream numFile(name.c_str());
 	numFile << balance; 
 	numFile.close();
+	cout << balance ;
 }
 void menu(int balance){
 	cout << "balance = " << balance << endl;
@@ -36,7 +37,7 @@ int main(int argc, char *argv[]) {
 	cout << "sum of money - " << endl;
 	cin >> sum;
 	balance = balance + sum;
-	writeFile("num.txt", 300);
+	writeFile("num.txt", balance);
 	}
 	if (number == 2){
 	int  take;
