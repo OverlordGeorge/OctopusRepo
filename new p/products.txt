@@ -1,0 +1,5 @@
+4 
+90 computer
+20 table
+63 notebook
+78 picture
