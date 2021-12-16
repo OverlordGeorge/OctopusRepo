@@ -1,0 +1,16 @@
+3
+
+2 
+sam smith
+tom
+3
+
+3 
+sam nick kate
+max
+5
+
+1
+john
+Brin
+10

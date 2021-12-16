@@ -1,46 +1,30 @@
 #include <iostream>
-#include <math.h>
+#include <fstream>
 
 using namespace std;
 
-float Descriminant(float a, float b, float c) {
-	float d = b*b - 4 *a *c;
-	return d;
-}
-
-void calcX1X2(float a, float b, float d) {
-	float x1 = ((-1)*b + sqrt(d))/(2*a);
-	float x2 = ((-1)*b - sqrt(d))/(2*a);
-	cout<<"x1 = "<<x1<<endl;
-	cout<<"x2 = "<<x2<<endl;
-}
-
-void calcX(float a, float b) {
-	float x = ((-1)*b)/(2*a);
-	cout<<"x = "<<x<<endl;
-}
-
-void noRoots() {
-	cout<<"no roots"<<endl;
-}
-
-void solveEquation() {
-	float a,b,c;
-	cout<<"type a, b and c: "<<endl;
-	cin>>a>>b>>c;
-	float d = Descriminant(a,b,c);
-	if (d>0){
-		calcX1X2(a,b,d);
+string* readFromFile(string filename, int &n){
+	ifstream file(filename.c_str());
+	file>>n;
+	string* names = new string[n];
+	for (int i = 0;i<n;i++) {
+		file>>names[i];
 	}
-	if (d==0){
-		calcX(a,b);
+	return names;
+}
+
+void printNames(string* names, int n) {
+	for (int i=0; i<n; i++){
+		cout<<names[i]<<" ";
 	}
-	if (d<0){
-		noRoots();
-	}
+	cout<<endl;
 }
 
 int main(int argc, char** argv) {
-	solveEquation();
+	int n, m;
+	string* namesA = readFromFile("classA.txt", n);
+	printNames(namesA, n);
+	string* namesB = readFromFile("classB.txt", m);
+	printNames(namesB, m);
 	return 0;
 }
